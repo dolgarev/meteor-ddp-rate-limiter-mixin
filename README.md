@@ -2,6 +2,13 @@
 
 This is a mixin for [mdg:validated-method](https://github.com/meteor/validated-method) to add rate limitation support to Meteor's methods.
 
+# Installation
+```
+meteor add liberation:ddp-rate-limiter-mixin
+```
+
+# Basic examples
+
 Some examples in pseudo code:
 
 ```js
