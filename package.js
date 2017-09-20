@@ -2,9 +2,9 @@ Package.describe({
   name: 'liberation:ddp-rate-limiter-mixin',
   version: '0.0.1',
   // Brief, one-line summary of the package.
-  summary: '',
+  summary: 'This is a mixin for mdg:validated-method to add rate limitation support to Meteor\'s methods.',
   // URL to the Git repository containing the source code for this package.
-  git: '',
+  git: 'https://github.com/dolgarev/meteor-ddp-rate-limiter-mixin',
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
