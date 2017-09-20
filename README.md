@@ -65,3 +65,4 @@ void new ValidatedMethod({
 
 For more info check the links:
 * [ddp-rate-limiter-mixin](https://github.com/nlhuykhang/ddp-rate-limiter-mixin)
+* [DDPRateLimiter](http://docs.meteor.com/api/methods.html#ddpratelimiter)
