@@ -1,3 +1,6 @@
+import { DDPRateLimiter } from 'meteor/ddp-rate-limiter'
+import { _ } from 'meteor/underscore'
+
 export default function (defaultOptions = {}) {
   _.defaults(defaultOptions, {
     matcher: {},
@@ -18,24 +21,22 @@ export default function (defaultOptions = {}) {
       matcher,
       numRequests,
       timeInterval,
-      clientAddress,
-      connectionId,
-      userId,
       callback
     } = opts
 
     _.defaults(matcher, {
-      clientAddress,
-      connectionId,
-      connectionId
+      clientAddress: opts.clientAddress,
+      connectionId: opts.connectionId,
+      userId: opts.userId
     })
 
-    matcher.name = methodOptions.name
-    matcher.type = 'method'
-
-    DDPRateLimiter.addRule(
-      matcher, numRequests, timeInterval, callback
-    )
+    DDPRateLimiter.addRule({
+      type: 'method',
+      name: methodOptions.name,
+      userId: matcher.userId,
+      connectionId: matcher.connectionId,
+      clientAddress: matcher.clientAddress
+    }, numRequests, timeInterval, callback)
 
     return methodOptions
   }
